@@ -1,2 +1,2 @@
 # bitmap-library-r
-Bitmap graphic library for R
+Bitmap graphics library for R
