@@ -1,8 +1,8 @@
-# Dibujando gr·ficos de mapa de bits con R
-# www.datosimagensonido.com
+# Dibujando gr√°ficos de mapa de bits con R
+# www.overfitting.net
 
 
-# LIBRERÕA GR¡FICA BITMAP
+# LIBRER√çA GR√ÅFICA BITMAP
 
 NewBitmap = function(dimx, dimy, val=0) {
   # Crea bitmap de dimensiones dimx y dimy
@@ -11,7 +11,7 @@ NewBitmap = function(dimx, dimy, val=0) {
 
 ClearBitmap = function(img, inc=F, val=0) {
   # Limpia bitmap
-  # Por defecto mÈtodo destructivo y con valor=0
+  # Por defecto m√©todo destructivo y con valor=0
   if (inc) img=img+val
   else img[]=val
   
@@ -20,7 +20,7 @@ ClearBitmap = function(img, inc=F, val=0) {
 
 DrawPoint = function(img, x0, y0, inc=T, val=1) {
   # Dibuja punto en (x0,y0)
-  # Por defecto mÈtodo no destructivo y con valor=1
+  # Por defecto m√©todo no destructivo y con valor=1
   img=DrawLine(img, x0, y0, x0, y0, inc, val)
   
   return(img)
@@ -28,7 +28,7 @@ DrawPoint = function(img, x0, y0, inc=T, val=1) {
 
 DrawLine = function(img, x0, y0, x1, y1, inc=T, val=1) {
   # Dibuja recta desde (x0,y0)-(x1,y1)
-  # Por defecto mÈtodo no destructivo y con valor=1
+  # Por defecto m√©todo no destructivo y con valor=1
   indices=indices.drawline(x0, y0, x1, y1)
   if (inc) img[indices]=img[indices]+val
   else img[indices]=val
@@ -52,8 +52,8 @@ indices.drawline = function(x0, y0, x1, y1) {
 }
 
 DrawRect = function(img, x0, y0, x1, y1, inc=T, val=1, fill=F) {
-  # Dibuja rect·ngulo (x0,y0)-(x1,y1)
-  # Por defecto mÈtodo no destructivo, con valor=1 y sin relleno
+  # Dibuja rect√°ngulo (x0,y0)-(x1,y1)
+  # Por defecto m√©todo no destructivo, con valor=1 y sin relleno
   x0=round(x0)
   x1=round(x1)
   y0=round(y0)
@@ -77,8 +77,8 @@ DrawRect = function(img, x0, y0, x1, y1, inc=T, val=1, fill=F) {
 }
 
 DrawCircle = function(img, x0, y0, r, inc=T, val=1, fill=F, thick=1) {
-  # Dibuja cÌrculo de centro (x0,y0) y radio r
-  # Por defecto mÈtodo no destructivo, con valor=1 y sin relleno
+  # Dibuja c√≠rculo de centro (x0,y0) y radio r
+  # Por defecto m√©todo no destructivo, con valor=1 y sin relleno
   # Puede elegirse el grosor si no se rellena
   img=DrawEllip(img, x0, y0, r, r, inc, val, fill, thick)
   
@@ -87,9 +87,9 @@ DrawCircle = function(img, x0, y0, r, inc=T, val=1, fill=F, thick=1) {
 
 DrawEllip = function(img, x0, y0, a, b, inc=T, val=1, fill=F, thick=1) {
   # Dibuja elipse de centro (x0,y0) y radios a y b
-  # Por defecto mÈtodo no destructivo, con valor=1 y sin relleno
+  # Por defecto m√©todo no destructivo, con valor=1 y sin relleno
   # Puede elegirse el grosor si no se rellena
-  # AquÌ no redondeamos para tener m·s precisiÛn en la divisiÛn
+  # Aqu√≠ no redondeamos para tener m√°s precisi√≥n en la divisi√≥n
   if (fill) {
     indices=which( ((row(img)-x0)/a)^2 + ((col(img)-y0)/b)^2 < 1 )
   } else {
@@ -103,8 +103,8 @@ DrawEllip = function(img, x0, y0, a, b, inc=T, val=1, fill=F, thick=1) {
 }
 
 CopyRect = function(img, x0, y0, x1, y1, xdst, ydst, inc=T, val=1) {
-  # Copia rect·ngulo (x0,y0)-(x1,y1) en (xdst,ydst)
-  # Por defecto mÈtodo no destructivo y con escalado=1
+  # Copia rect√°ngulo (x0,y0)-(x1,y1) en (xdst,ydst)
+  # Por defecto m√©todo no destructivo y con escalado=1
   x0=round(x0)
   x1=round(x1)
   y0=round(y0)
@@ -176,14 +176,14 @@ SaveBitmap(img/1.6, "ejemplo")
 
 # SERIE DE FOURIER DE DIENTE DE SIERRA
 
-f=1  # f=1: animaciÛn de 512px, f=2: animaciÛn de 1024px
+f=1  # f=1: animaci√≥n de 512px, f=2: animaci√≥n de 1024px
 ALTO=300*f
 ANCHO=(250-18)*f
 CENTRO=ANCHO*0.6
-AMPLITUD=90*f  # PÌxeles m·x. del diente de sierra
-NPERIODO=140*f  # PÌxeles del perÌodo
-CICLOS=2  # N˙m. perÌodos completos
-NTERMINOS=5  # N˙m. tÈrminos desarrollo Fourier
+AMPLITUD=90*f  # P√≠xeles m√°x. del diente de sierra
+NPERIODO=140*f  # P√≠xeles del per√≠odo
+CICLOS=2  # N√∫m. per√≠odos completos
+NTERMINOS=5  # N√∫m. t√©rminos desarrollo Fourier
 
 frm=NewBitmap(ANCHO+NPERIODO*CICLOS, ALTO)
 
@@ -192,20 +192,20 @@ xprev=ANCHO+2
 yprev=ALTO/2
 
 for (t in 0:(NPERIODO*CICLOS-1)) {
-  x=array(0, NTERMINOS+1)  # Un valor m·s largo que NTERMINOS: x[1]=0, y[1]=0
+  x=array(0, NTERMINOS+1)  # Un valor m√°s largo que NTERMINOS: x[1]=0, y[1]=0
   y=array(0, NTERMINOS+1)
   
   # Para cada t se tiene set de circunferencias y valor de salida -> frm.png
   for (n in 1:NTERMINOS) {
     x[n+1] = x[n] + radio[n]*cos(2*pi/NPERIODO*n*t)
     y[n+1] = y[n] + radio[n]*sin(2*pi/NPERIODO*n*t)
-    frm=DrawCircle(frm, CENTRO+x[n], ALTO/2+y[n], abs(radio[n]), val=0.18, fill=T)  # CÌrculo
+    frm=DrawCircle(frm, CENTRO+x[n], ALTO/2+y[n], abs(radio[n]), val=0.18, fill=T)  # C√≠rculo
     frm=DrawLine(frm, CENTRO+x[n], ALTO/2+y[n], CENTRO+x[n+1], ALTO/2+y[n+1], inc=F)  # Radio
   }
   
-  frm=DrawLine(frm, CENTRO+x[n+1], ALTO/2+y[n+1], ANCHO, ALTO/2+y[n+1], val=0.2)  # LÌnea hasta gr·fica
-  frm=DrawPoint(frm, ANCHO+1, ALTO/2+y[n+1], inc=F)  # Punto de la gr·fica
-  if (t>0) frm=DrawLine(frm, xprev, yprev, ANCHO+1, ALTO/2+y[n+1], val=0.4)  # UniÛn puntos gr·fica
+  frm=DrawLine(frm, CENTRO+x[n+1], ALTO/2+y[n+1], ANCHO, ALTO/2+y[n+1], val=0.2)  # L√≠nea hasta gr√°fica
+  frm=DrawPoint(frm, ANCHO+1, ALTO/2+y[n+1], inc=F)  # Punto de la gr√°fica
+  if (t>0) frm=DrawLine(frm, xprev, yprev, ANCHO+1, ALTO/2+y[n+1], val=0.4)  # Uni√≥n puntos gr√°fica
   yprev=ALTO/2+y[n+1]
   
   SaveBitmap(frm[,ncol(frm):1], paste0("frm", iif(t<10, "00", iif(t<100, "0", "")), t))
