@@ -1,5 +1,6 @@
 # Dibujando gráficos de mapa de bits con R
 # www.overfitting.net
+# https://www.overfitting.net/2018/01/dibujando-graficos-de-mapa-de-bits-con-r_18.html
 
 
 # LIBRERÍA GRÁFICA BITMAP
